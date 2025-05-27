@@ -92,13 +92,8 @@ Once connected, you can use the following commands at the VirtuOS> prompt:
     help: Displays a list of available commands.
 
     exit / quit: Disconnects the client from the server and exits the client application.
-    
-``bash
-VirtuOS/
-├── client.py         # CLI client interface
-├── server.py         # TCP server handling file system and requests
-├── README.md         # You're reading it!
-└── /server_storage/  # Virtual file system root (auto-created)
+
+
 
 Technologies Used
 
