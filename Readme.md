@@ -58,7 +58,7 @@ Bash
 
 # Example snippet from client.py
 SERVER_HOST = 'YOUR_SERVER_LAN_IP' # e.g., '192.168.1.100'
-SERVER_PORT = 12345                 # Must match server's port
+SERVER_PORT = 8000                # Must match server's port
 
 Run the Client:
 Open a terminal or command prompt, navigate to the directory where client.py is saved, and run:
@@ -73,32 +73,32 @@ Client Commands
 Once connected, you can use the following commands at the VirtuOS> prompt:
 
     ls: Lists the files and directories in the current working directory on the server.
+
     cd <directory_name>: Changes the current working directory on the server.
         cd ..: Move up one directory level.
-        cd /: Go to the server's root directory.
+
     mkdir <directory_name>: Creates a new directory with the specified name in the current server directory.
+
     rm <file_or_directory_name>: Removes a file or an empty directory from the server.
-        Caution: This command does not typically confirm deletion. Use with care.
+    
     touch <file_name>: Creates an empty file with the specified name in the current server directory.
+
     mydir: Displays the current working directory of the client's local machine. This command operates only on the client side.
+
     upload <local_file_path> [server_destination_path]: Uploads a file from the client's local machine to the server.
-        local_file_path: The path to the file on the client's machine (can be relative to the client's CWD).
-        server_destination_path (optional): The path on the server where the file should be saved. If omitted, the file will be uploaded to the server's current directory with its original name.
+
     download <server_file_path> [local_destination_path]: Downloads a file from the server to the client's local machine.
-        server_file_path: The path to the file on the server.
-        local_destination_path (optional): The path on the client where the file should be saved. If omitted, the file will be downloaded to the client's current directory with its original name.
+        
     help: Displays a list of available commands.
+
     exit / quit: Disconnects the client from the server and exits the client application.
-
-Project Structure (Conceptual)
-
+    
+``bash
 VirtuOS/
-├── server.py
-├── client.py
-└── server_files/ # (Optional) Initial directory for server's root operations
-    ├── some_file.txt
-    └── some_folder/
-        └── another_file.log
+├── client.py         # CLI client interface
+├── server.py         # TCP server handling file system and requests
+├── README.md         # You're reading it!
+└── /server_storage/  # Virtual file system root (auto-created)
 
 Technologies Used
 
